@@ -1,0 +1,121 @@
+<body>
+  <header class="fixed-top page-header">
+    <div class="">
+      <nav id="navbar" class="navbar navbar-expand-lg navbar-dark bg-primary  pl-3 pr-3">
+        <div class="container-fluid  container-fluid-max ">
+          <a class="navbar-brand" routerLink="/"> <img class="" width="60" alt="logo" src="assets/imagenes/logo.png" />
+            BugTickets</a>
+
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor02"
+            aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarColor02">
+
+            <ng-container *ngIf="!authService.loggedIn(); else navOptions ">
+
+            </ng-container>
+
+            <ng-template #navOptions>
+              <ul class="navbar-nav me-auto">
+
+                <ng-container *ngIf="!authService.getSuperAdmin(); else adminOptions ">
+                  <li class="nav-item">
+                    <a class="nav-link" aria-current="page" routerLinkActive="active" routerLink="/tickets">Tickets</a>
+                  </li>
+
+                </ng-container>
+
+                <ng-template #adminOptions>
+
+                  <li class="nav-item">
+                    <a class="nav-link" aria-current="page" routerLinkActive="active" routerLink="/tickets">Mis
+                      Tickets</a>
+                  </li>
+
+                  <li class="nav-item">
+                    <a class="nav-link  " aria-current="page" routerLinkActive="active" routerLink="/tickets-privados">
+                      Tickets</a>
+                  </li>
+
+                  <li class="nav-item">
+                    <a class="nav-link" aria-current="page" routerLinkActive="active"
+                      routerLink="/usuarios">Usuarios</a>
+                  </li>
+
+                  <li class="nav-item">
+                    <a class="nav-link" aria-current="page" routerLinkActive="active"
+                      routerLink="/departamentos">Departamentos</a>
+                  </li>
+
+
+                </ng-template>
+
+
+
+              </ul>
+
+            </ng-template>
+
+
+            <ul class="navbar-nav ml-auto mb-2 mb-lg-0 ">
+              <ng-container *ngIf="!authService.loggedIn(); else loggedIn ">
+                <li class="nav-item">
+                  <a class="nav-link" aria-current="page" routerLinkActive="active" routerLink="/login">Login</a>
+                </li>
+
+              </ng-container>
+
+              <ng-template #loggedIn>
+
+
+                <div class="btn-group">
+                  <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown"
+                    data-bs-display="static" aria-expanded="false">
+                    <li class="nav-item nav-username">
+                      <i class="material-icons">person</i>
+                      <strong>
+                        {{authService.getUserName()}}
+                      </strong>
+                    </li>
+                  </button>
+
+                  <ul class="dropdown-menu dropdown-menu-lg-end">
+                    <li><button class="dropdown-item" type="button" (click)="logOut()">
+                        Cerrar sesión
+                      </button></li>
+                    
+                  </ul>
+                </div>
+                 
+              </ng-template>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main-container">
+    <div class="container-views">
+      <router-outlet> </router-outlet>
+
+    </div>
+  </main>
+
+  <ngx-toast-notifier> </ngx-toast-notifier>
+
+  <footer class="py-4 page-footer bg-primary">
+    <div class="container-fluid container-fluid-max center">
+      <div class="row">
+        <div class="col">
+          <!-- <a class="navbar-brand text-secondary" routerLink="/"> <img class="" width="40" alt="logo" src="assets/imagenes/logo.png" /> BugTickets</a> -->
+        </div>
+        <div class="col">
+          <small class="text-muted copyright"> BugTickets © 2022 </small>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>

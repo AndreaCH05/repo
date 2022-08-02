@@ -1,0 +1,31 @@
+.dialogo-confirm{
+    min-width: 400px !important;
+    min-height: 150px !important;
+}
+
+
+.dlg-cnf-titulo{
+    margin-bottom: 20px;
+}
+
+
+
+.dlg-cnf-contenido{
+    margin: auto;
+    text-align: left;
+    padding: 5px;
+}
+
+.dlg-cnf-actions{
+    margin-top: 30px;
+    padding-bottom: 20px;
+}
+
+
+.dlg-cnf-btn-cancel{
+}
+
+.dlg-cnf-btn-continue{
+}
+
+  

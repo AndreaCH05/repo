@@ -1,0 +1,233 @@
+/* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+
+
+/* SCROLL
+  –––––––––––––––––––––––––––––––––––––––––––––––––– */
+::-webkit-scrollbar {
+  width: 8px;
+  /* TamaÃ±o del scroll en vertical */
+  height: 8px;
+  /* TamaÃ±o del scroll en horizontal */
+  background-color: #000;
+  border-radius: 5px;
+
+}
+
+/* Ponemos un color de fondo y redondeamos las esquinas del thumb */
+::-webkit-scrollbar-thumb {
+  background-color: #906927;
+  border-radius: 5px;
+}
+
+/* Cambiamos el fondo y agregamos una sombra cuando estÃ© en hover */
+::-webkit-scrollbar-thumb:hover {
+  box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2);
+  padding: 0.5px;
+}
+
+/* Cambiamos el fondo cuando estÃ© en active */
+::-webkit-scrollbar-thumb:active {
+  background-color: #5f4518;
+}
+
+::-webkit-scrollbar-track {
+  background: #2b2c2c;
+  border-radius: 5px;
+}
+
+
+
+.wrap-notifications {
+  padding-top: 20PX !important;
+}
+
+
+.div-group-ctl .alert.alert-danger,
+.form-group>.alert.alert-danger {
+  padding: 6px 10px !important;
+  text-align: left;
+  background-color: #d9534f !important;
+  background: #d9534f !important;
+  background: linear-gradient(90deg, #e51c23 0%, #d9534f 60%, #d9544f7f 100%) !important;
+  background: transparent !important;
+  color: #d9544fc5;
+  border: none !important;
+  padding: 4px 2px !important;
+  font-size: small !important;
+  font-weight: 500;
+  margin-bottom: 0px !important;
+}
+
+
+.cmp-principal {
+  padding: 50px 20px;
+  margin: auto;
+  overflow: auto;
+  max-width: 1600px !important;
+  min-height: calc(100vh - 152px);
+  background: rgba(255, 255, 255, 0.5);
+}
+
+
+.cmp-principal>div {
+  padding: 5px;
+}
+
+
+.alert-heading {
+  font-size: larger !important;
+  font-weight: bolder !important;
+}
+
+.alert.alert-dismissible.alert-danger.ng-star-inserted {
+  margin-bottom: 0px !important;
+}
+
+
+input.inputSearch,
+input.inputSearch:hover,
+input.inputSearch:active,
+input.inputSearch:focus {
+  width: 100% !important;
+  padding: 10px;
+  border: none;
+
+  border: none !important;
+  border-color: transparent !important;
+  background: #c9c9c8 !important;
+  color: white;
+
+  background: rgba(0, 0, 0, 0.04) !important;
+  color: #2b2c2c81;
+
+  border-bottom: solid 2px #2b2c2c3b !important;
+  margin-bottom: 0px;
+  border-radius: 10px 10px 0 0;
+}
+
+
+.row-paginator {
+  font-size: small;
+}
+
+.mat-paginator-page-size-label,
+.mat-paginator-range-label {
+  font-size: small;
+  font-weight: 400;
+  color: #2b2c2cbe;
+}
+
+.dialogo-confirm {
+  position: relative !important;
+}
+
+.close-icon {
+  position: absolute;
+  top: 0;
+  top: -10;
+  right: 0;
+  padding: 0px;
+  line-height: 0px;
+  min-width: auto;
+  background: transparent;
+  border: none;
+}
+
+.right {
+  text-align: right;
+}
+
+.input-group-text,
+.input-group-prepend {
+  max-height: 38px !important;
+}
+
+.cnt-table {
+  overflow: auto !important;
+}
+
+
+
+.cnt-table .table {
+  overflow: auto !important;
+}
+
+th, td {
+  vertical-align: middle !important;
+}
+
+
+.form-row{
+  width: 100%;
+  margin: auto !important;
+}
+
+.form-row > .row{
+  width: 100%;
+  margin: auto !important;
+}
+
+.form-row .div-btns{
+  padding: 10px;
+}
+
+
+.div-btns .left, .div-btns .right{
+  width: 50%;
+}
+
+.div-btns .btn-md {
+  width: auto;
+  min-width: 120px;
+  font-size: small !important;
+}
+
+
+.form-group.mb-2{
+  margin-bottom: 1.5rem !important;
+}
+
+textarea,
+.textarea{
+ height: 120px !important;
+}
+
+
+.mat-paginator{
+  background:transparent !important;
+}
+
+.mat-paginator-outer-container,
+.card-header{
+  background: rgba(0, 0, 0, 0.04) !important;
+}
+
+.mat-paginator-outer-container{
+  border-radius: 0 0 10px 10px;
+}
+
+
+.card,
+.card-body{
+  background: rgba(0, 0, 0, 0) !important;
+}
+
+@media (min-width: 1200px) {
+  .cmp-principal {
+    padding: 50px 80px;
+  }
+
+}
+
+ 

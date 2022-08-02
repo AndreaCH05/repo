@@ -1,0 +1,167 @@
+----------------------------------------------
+<div class="container">
+
+  <form class="pd-1" #formLogin="ngForm" (ngSubmit)="login( )" [formGroup]="angForm" novalidate>
+
+    <p>Form value: {{ angForm.value | json }}</p>
+    <p>Form status: {{ angForm.status | json }}</p>
+    <p>Form status required : {{ angForm.controls['email'].errors | json }}</p>
+    <p>Form status required : {{ angForm.controls['email'].errors?.['required'] | json }}</p>
+
+
+
+    <!-- 
+    <div class="form-group">
+      <label>Email : </label>
+      <input type="text" formControlName="email" class="form-control"
+        [ngClass]="{ 'is-invalid': angForm.controls['email'].errors &&  angForm.controls['email'].touched }" />
+
+      <div *ngIf="angForm.controls['email']" class="invalid-feedback">
+        <div *ngIf="angForm.controls['email']">*Ingresa email. </div>
+      </div>
+    </div> -->
+
+
+    <div class="form-group">
+      <label>Email : </label>
+      <input type="text" formControlName="email" class="form-control"
+        [ngClass]="{ 'is-invalid': angForm.controls['email'].errors &&  angForm.controls['email'].touched }" />
+
+
+      <div
+        *ngIf="angForm.controls['email'].invalid && (angForm.controls['email'].dirty || angForm.controls['email'].touched)"
+        class="alert alert-danger">
+        <div *ngIf="angForm.controls['email'].errors"> *Ingresa email. </div>
+      </div>
+      <div *ngIf="angForm.controls['email']" class="invalid-feedback">
+        <div *ngIf="angForm.controls['email']">*Ingresa email. </div>
+      </div>
+    </div>
+
+
+
+    <!-- 
+    <div class="form-group">
+      <label>Email : </label>
+      <input type="text" formControlName="email" class="form-control"
+        [ngClass]="{ 'is-invalid': angForm.controls['email'].errors &&  angForm.controls['email'].touched }" />
+
+      <div *ngIf="angForm.controls['email']" class="invalid-feedback">
+        <div *ngIf="angForm.controls['email']">*Ingresa email. </div>
+      </div>
+
+      <div
+        *ngIf="angForm.controls['email'].invalid && (angForm.controls['email'].dirty || angForm.controls['email'].touched)"
+        class="alert alert-danger">
+        <div *ngIf="angForm.controls['email'].errors"> *Ingresa email. </div>
+      </div>
+    </div>
+
+ -->
+
+
+
+
+
+
+    <div class="form-group">
+      <label class="center-block">Contraseña:
+        <input class="form-control" formControlName="password" type="password" />
+      </label>
+
+      <div
+        *ngIf="angForm.controls['password'].invalid && (angForm.controls['password'].dirty || angForm.controls['email'].touched)"
+        class="alert alert-danger">
+        <div *ngIf="angForm.controls['password'].errors"> Ingresa ontraseña. </div>
+      </div>
+    </div>
+
+
+
+    
+  </form>
+
+</div>
+
+
+
+
+<div class="row">
+  <div *ngIf="alert" class="alert alert-dismissible"
+    [ngClass]="{ 'alert-danger ' : alertError, 'alert-warning': !alertError} " role="alert">
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"
+      (click)="cerrarAlerta()"></button>
+    <h4 class="alert-heading">
+      {{alertDescripcion}}
+    </h4>
+    <p class="mb-0">{{alertDescripcion}}</p>
+  </div>
+
+
+  <div class="col-md-4 mx-auto">
+    <div class="card">
+      <button class="btn btn-primary  m-1 mr-2" title="Guardar" (click)="addSuccess()">
+        success
+      </button>
+
+      <div class="card-header">
+        <h2>
+          Login
+        </h2>
+      </div>
+      <div class="card-body">
+
+        
+
+
+        <form class="pd-1" #formLogin="ngForm" (ngSubmit)="login( )">
+          <div class="form-group   mb-2 pb-2">
+            <input type="text" [(ngModel)]="user.email" class="form-control" placeholder="Email" name="email"
+              required />
+          </div>
+
+          <div class="form-group   mb-2 pb-2">
+            <input type="password" [(ngModel)]="user.password" class="form-control" placeholder="Contraseña"
+              name="password" required />
+          </div>
+
+
+
+          <div class="form-group">
+            <button class="btn btn-primary  m-1 mr-2" title="Guardar">
+              iniciar sesion
+            </button>
+
+            <button type="button" (click)="onReset()" class="btn btn-danger float-right">
+              Cancelar
+            </button>
+          </div>
+
+        </form>
+
+      </div>
+    </div>
+
+  </div>
+
+  <ngx-toast-notifier></ngx-toast-notifier>
+
+
+</div>
+
+---------------------------------------
+
+temas ccessfully.
+
+https://bootswatch.com/sandstone/
+
+https://bootswatch.com/sketchy/
+
+
+https://material.angular.io/components/menu/overview
+
+https://getbootstrap.com/docs/5.2/components/dropdowns/#menu-items
+
+https://www.w3schools.com/icons/fontawesome5_intro.asp
+
+https://fonts.google.com/icons?icon.set=Material+Icons

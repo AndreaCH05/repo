@@ -1,0 +1,50 @@
+.landing{
+    background-image: url(./../../../assets/imagenes/fondo.gif);
+    background-image: url(./../../../assets/imagenes/bin.png);
+    background-size: cover;
+    height: calc(100vh - 152px);
+}
+
+.div-img-logo {
+    width: 100%;
+    padding: 30px 5px;
+
+    text-align: center;
+    display: inline-block;
+    position: relative;
+    min-height: 600px;
+}
+
+
+.img-logo {
+    width: 50%;
+    max-width: 320px;
+    padding: 5px;
+    margin: auto;
+    margin-top: 50px;
+    position: relative;
+    margin-left: calc(25% - 0px);
+    padding: 5px;
+
+}
+
+
+.rotate {
+    animation: rotation 6s infinite linear;
+}
+
+@media (min-width: 800px) {
+    .img-logo {
+        margin-left: calc(50% - 150px);
+  }
+}
+
+@keyframes rotation {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(359deg);
+    }
+}

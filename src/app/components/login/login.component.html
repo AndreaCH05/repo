@@ -1,0 +1,97 @@
+<div class="cmp-principal">
+  <div class="row">
+    <div class="mx-auto col-md-8 col-lg-6 col-xl-5">
+      <div class="card">
+        <div class="card-header ">
+          <h1>
+            Login
+          </h1>
+        </div>
+
+        <div class="card-body mb-1 ml-3 mr-3 row">
+          <form method="post" id="login" autocomplete="off" class="form-row row" #formLogin="ngForm" autocomplete="off"
+            [formGroup]="angForm" novalidate>
+
+            <div class="row justify-content-md-center ">
+              <div class="form-group col-xl-11  col-xxl-10 mt-4">
+
+                <div class="div-group-ctl">
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text" id="basic-addon1"><i class="fas fa-envelope"></i></span>
+                    </div>
+                    <input class="form-control input" formControlName="email" type="text" placeholder="Email"
+                      aria-label="email" aria-describedby="basic-addon1" name="email"
+                      [ngClass]="{ 'is-invalid':( submitted  &&  angForm.controls['email'].errors ||  angForm.controls['email'].errors &&  angForm.controls['email'].touched )}" />
+
+                  </div>
+                  <div
+                    *ngIf="angForm.controls['email'].invalid && (  (submitted  &&  angForm.controls['email'].errors) ||  angForm.controls['email'].dirty || angForm.controls['email'].touched)"
+                    class="alert alert-danger">
+                    <div> *Ingresa Email. </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group col-xl-11  col-xxl-10 mt-1">
+                <div class="div-group-ctl">
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text" id="basic-addon1"><i class="fas fa-lock"></i></span>
+                    </div>
+
+                    <input value="" id="password" class="input form-control" name="password" required="true"
+                      type="password" placeholder="Contraseña" aria-label="password" aria-describedby="basic-addon1"
+                      formControlName="password"
+                      [ngClass]="{ 'is-invalid':( submitted  &&  angForm.controls['password'].errors ||  angForm.controls['password'].errors &&  angForm.controls['password'].touched )}" />
+
+                    <div class="input-group-append">
+                      <span class="input-group-text" onclick="password_show_hide();">
+                        <i class="fas fa-eye" id="show_eye"></i>
+                        <i class="fas fa-eye-slash d-none" id="hide_eye"></i>
+                      </span>
+                    </div>
+                  </div>
+
+                  <div
+                    *ngIf="angForm.controls['password'].invalid && (  (submitted  &&  angForm.controls['password'].errors) ||  angForm.controls['password'].dirty || angForm.controls['password'].touched)"
+                    class="alert alert-danger">
+                    <div> *Ingresa Cotraseña. </div>
+                  </div>
+                </div>
+
+              </div>
+
+              <div class="form-group col-xl-11 col-xxl-10 mt-3  mb-3">
+                <div class="row  p-2">
+                  <button class="btn btn-primary  m-1" title="Iniciar sesion" (click)="onSubmit()">
+                    iniciar sesion
+                  </button>
+                  <button type="button" class="btn btn-danger m-1" (click)="onReset()" title="Cancelar">
+                    Cancelar
+                  </button>
+                </div>
+              </div>
+
+
+            </div>
+
+          </form>
+        </div>
+
+
+        <div *ngIf="alert" class="col-12 alert alert-dismissible"
+          [ngClass]="{ 'alert-danger ' : alertError, 'alert-warning': !alertError} " role="alert">
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"
+            (click)="cerrarAlerta()"></button>
+          <h4 class="alert-heading">
+            {{alertTitulo}}
+          </h4>
+          <p class="mb-0">{{alertDescripcion}}</p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  
+</div>
